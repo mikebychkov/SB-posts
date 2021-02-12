@@ -10,10 +10,13 @@ spring:
     properties:
       hibernate:
       dialect: "org.hibernate.dialect.PostgreSQL10Dialect"
+#    database: "POSTGRESQL"
   datasource:
     url: "jdbc:postgresql://db.cfkmdc8gurae.eu-central-1.rds.amazonaws.com:5432/sb_posts"
     username: "postgres"
     password: "Zxcv1234"
+#    platform: "postgres"
+#  database.driverClassName: "org.postgresql.Driver"
 
 management:
   endpoints:

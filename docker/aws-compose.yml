@@ -8,3 +8,9 @@ services:
     environment:
       PROFILE: "aws"
       DB_SERVER: "db.cfkmdc8gurae.eu-central-1.rds.amazonaws.com:5432"
+  logspout:
+    image: gliderlabs/logspout
+    mem_limit: 300000000
+    command: syslog://logs.papertrailapp.com:32675
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock

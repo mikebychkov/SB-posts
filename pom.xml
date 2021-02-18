@@ -67,7 +67,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>org.mike.posts.PostsApplication</start-class>
         <docker.image.name>mikebychkov/sb-posts</docker.image.name>
-        <docker.image.tag>latest</docker.image.tag>
+        <!--suppress UnresolvedMavenProperty -->
+        <docker.image.tag>${env.IMG_TAG}</docker.image.tag>
     </properties>
 
     <build>

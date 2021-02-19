@@ -1,5 +1,6 @@
 package org.mike.posts.service;
 
+import org.mike.posts.kafka.KafkaMessageSource;
 import org.mike.posts.model.Post;
 import org.mike.posts.repo.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class PostSvc {
 
     @Autowired
     private PostRepo repo;
+
+    @Autowired
+    private KafkaMessageSource kafkaMessageSource;
 
     public List<Post> getAll() {
         return repo.findAllByOrderByName();
@@ -31,6 +35,7 @@ public class PostSvc {
     }
 
     public Post add(Post post) {
+        kafkaMessageSource.publishMessage(post);
         return repo.save(post);
     }
 }

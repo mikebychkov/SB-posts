@@ -7,9 +7,24 @@ spring:
     hibernate:
       ddl-auto: "update"
     show-sql: "true"
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: postsChangeTopic
+          content-type: application/json
+      kafka:
+        binder:
+          brokers: localhost
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.apache.kafka: DEBUG
+    org.mike: DEBUG

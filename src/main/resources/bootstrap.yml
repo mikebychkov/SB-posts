@@ -1,6 +1,9 @@
 spring:
   application:
     name: posts
+  profiles:
+    active:
+      default
   cloud:
     kubernetes:
       reload:

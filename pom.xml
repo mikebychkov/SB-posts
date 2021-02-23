@@ -94,6 +94,12 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
+        <!--LOGGING-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
     </dependencies>
 
     <properties>
